@@ -1,5 +1,9 @@
 pipeline {
   environment {
+    WORKSPACE=pwd()
+    ETAG=''
+    KOPS_STATE_STORE="s3://valuesource-kubernetes"
+    CLUSTER_NAME="value-source-cloud.com"
     registry = "dcurrotto/dotnet-core-simple"
     registryCredential = 'DockerHubCredentials'
     dockerImage = ''
