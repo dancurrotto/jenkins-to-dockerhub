@@ -100,7 +100,7 @@ pipeline {
     stage('Deploy Pods') {
             steps {
                 
-                sh 'kubectl apply -f src/dotnet-core-simple-web-ui/kubernetes/dotnet-core-simple.yml'
+                sh 'kubectl apply -f dotnet-core-simple.yml'
                
                 // sh 'kubectl run my-nginx --image=nginx --replicas=1 --port=80'
                 
