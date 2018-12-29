@@ -62,19 +62,19 @@ pipeline {
                 //********************************************************************
 
                 ///Create:
-                
+                /*
                 sh 'kops create -f $CLUSTER_NAME.yaml --state $KOPS_STATE_STORE'
                 sh 'kops create secret --name value-source-cloud.com sshpublickey admin -i ~/.ssh/id_rsa.pub'
                 sh 'kops update cluster $CLUSTER_NAME --state $KOPS_STATE_STORE --yes'
-                
+                */
                 
                 ///Update:
-                /*
+                
                 sh 'kops create secret --name value-source-cloud.com sshpublickey admin -i ~/.ssh/id_rsa.pub'
                 sh 'kops replace -f $CLUSTER_NAME.yaml'
                 sh 'kops update cluster $CLUSTER_NAME --state $KOPS_STATE_STORE --yes'
                 sh 'kops rolling-update cluster $CLUSTER_NAME --yes'
-                */
+                
 
                
 
@@ -100,7 +100,7 @@ pipeline {
     stage('Deploy Pods') {
             steps {
                 
-                sh 'kubectl apply -f dotnet-core-simple-web-ui/kubernetes/dotnet-core-simple.yml'
+                sh 'kubectl apply -f src/dotnet-core-simple-web-ui/kubernetes/dotnet-core-simple.yml'
                
                 // sh 'kubectl run my-nginx --image=nginx --replicas=1 --port=80'
                 
