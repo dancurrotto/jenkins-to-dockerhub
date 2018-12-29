@@ -1,0 +1,50 @@
+﻿@model dotnet_core_simple_web_ui.Models.HomeModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Secret:</h3>
+        <ul>
+            <li>@Model.Secret</li>
+        </ul>
+        <h3>ClientId:</h3>
+        <ul>
+            <li>@Model.ClientId</li>
+        </ul>
+    </div>
+</div>
+
+<div style="margin-top:6rem;" class="row">
+    <div class="col-md-12">
+        <img src="~/images/Kubernetes.png" alt="Kubernetes" width="50" />
+    </div>
+</div>
