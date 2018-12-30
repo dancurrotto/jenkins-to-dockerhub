@@ -69,30 +69,18 @@ pipeline {
                 */
                 
                 ///Update:
-                
+                /*
                 sh 'kops create secret --name value-source-cloud.com sshpublickey admin -i ~/.ssh/id_rsa.pub'
                 sh 'kops replace -f $CLUSTER_NAME.yaml'
                 sh 'kops update cluster $CLUSTER_NAME --state $KOPS_STATE_STORE --yes'
                 sh 'kops rolling-update cluster $CLUSTER_NAME --yes'
-                
+                */
 
                
 
                 // This is the statement that created the cluster.
-                // sh 'kops create cluster $NAME --zones us-east-2a --node-count 1 --node-size m4.large --kubernetes-version v1.6.6 --master-size m4.large --dry-run -o yaml > $NAME.yaml'
+                sh 'kops create cluster $CLUSTER_NAME --zones us-east-2a --node-count 1 --node-size m4.large --master-size m4.large --dry-run -o yaml > $CLUSTER_NAME.yaml'
                 //*********************************************************************
-
-
-
-
-                // sh 'kubectl apply -f deployment.yaml'
-               
-                // sh 'kubectl run my-nginx --image=nginx --replicas=1 --port=80'
-                
-                // sh 'kubectl expose deployment my-nginx --port=80 --type=LoadBalancer'
-                
-                // sh 'kubectl get service -o wide'
-                
             }
             
     }
@@ -100,7 +88,7 @@ pipeline {
     stage('Deploy Pods') {
             steps {
                 
-                sh 'kubectl apply -f dotnet-core-simple.yml'
+                // sh 'kubectl apply -f dotnet-core-simple.yml'
                
                 // sh 'kubectl run my-nginx --image=nginx --replicas=1 --port=80'
                 
