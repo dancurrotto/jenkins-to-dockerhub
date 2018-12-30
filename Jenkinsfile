@@ -62,11 +62,11 @@ pipeline {
                 //********************************************************************
 
                 ///Create:
-                /*
+                
                 sh 'kops create -f $CLUSTER_NAME.yaml --state $KOPS_STATE_STORE'
                 sh 'kops create secret --name value-source-cloud.com sshpublickey admin -i ~/.ssh/id_rsa.pub'
                 sh 'kops update cluster $CLUSTER_NAME --state $KOPS_STATE_STORE --yes'
-                */
+                
                 
                 ///Update:
                 /*
@@ -79,7 +79,7 @@ pipeline {
                
 
                 // This is the statement that created the cluster.
-                sh 'kops create cluster $CLUSTER_NAME --zones us-east-2a --node-count 1 --node-size m4.large --master-size m4.large -o yaml > $CLUSTER_NAME.yaml'
+                // sh 'kops create cluster $CLUSTER_NAME --zones us-east-2a --node-count 1 --node-size m4.large --master-size m4.large -o yaml > $CLUSTER_NAME.yaml'
                 //*********************************************************************
 
 
