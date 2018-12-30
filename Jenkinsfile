@@ -81,12 +81,16 @@ pipeline {
                 // This is the statement that created the cluster.
                 sh 'kops create cluster $CLUSTER_NAME --zones us-east-2a --node-count 1 --node-size m4.large --master-size m4.large --dry-run -o yaml > $CLUSTER_NAME.yaml'
                 //*********************************************************************
+
+
+
             }
             
     }
 
     stage('Deploy Pods') {
             steps {
+                sh 'echo Deploy Pods'
                 
                 // sh 'kubectl apply -f dotnet-core-simple.yml'
                
