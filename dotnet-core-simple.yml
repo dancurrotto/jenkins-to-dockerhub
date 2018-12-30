@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: app/v1beta1
 kind: Deployment
 metadata:
   name: dotnet-core-simple
