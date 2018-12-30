@@ -79,7 +79,7 @@ pipeline {
                
 
                 // This is the statement that created the cluster.
-                sh 'kops create cluster $CLUSTER_NAME --zones us-east-2a --node-count 1 --node-size m4.large --master-size m4.large --dry-run -o yaml > $CLUSTER_NAME.yaml'
+                sh 'kops create cluster $CLUSTER_NAME --zones us-east-2a --node-count 1 --node-size m4.large --master-size m4.large -o yaml > $CLUSTER_NAME.yaml'
                 //*********************************************************************
 
 
